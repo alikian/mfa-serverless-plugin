@@ -1,0 +1,22 @@
+{
+  "name": "mfa-serverless-plugin",
+  "version": "0.0.1",
+  "description": "A plugin for the serverless framework which helps with MFA.",
+  "main": "mfa.js",
+  "keywords": [
+    "serverless",
+    "aws",
+    "mfa",
+    "token"
+  ],
+  "author": "Ali Kian",
+  "license": "ISC",
+  "dependencies": {
+    "speakeasy": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alikian/mfa-serverless-plugin"
+  },
+  "devDependencies": {}
+}
