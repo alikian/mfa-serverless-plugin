@@ -1,6 +1,6 @@
 {
   "name": "mfa-serverless-plugin",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A plugin for the serverless framework which helps with MFA.",
   "main": "mfa.js",
   "keywords": [

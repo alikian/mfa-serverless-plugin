@@ -20,8 +20,6 @@ class ServerlessPlugin {
       encoding: 'base32'
     });
     
-    this.serverless.cli.log('token: ' + token);
-
     const credentials = this.serverless.providers.aws.getCredentials();
 
     this.sts = new this.serverless.providers.aws.sdk.STS(credentials);

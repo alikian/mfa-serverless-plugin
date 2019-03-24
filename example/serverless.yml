@@ -14,7 +14,7 @@
 service: example # NOTE: update this with your service name
 
 plugins:
-  - mfa
+  - mfa-serverless-plugin
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
