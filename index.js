@@ -8,12 +8,22 @@ class ServerlessPlugin {
     this.options = options;
 
     this.hooks = {
-      'package:finalize': this.mfa.bind(this),
+      'before:deploy:deploy': this.mfa.bind(this),
     };
   }
 
   async mfa() {
     this.serverless.cli.log('get token');
+    
+    if (!process.env.AWS_MFA_KEY){
+      this.serverless.cli.log('AWS_MFA_KEY does not existing skipping mfa');
+      return;
+    }
+    if (!process.env.AWS_MFA_SERIAL_NUMBER){
+      this.serverless.cli.log('AWS_MFA_SERIAL_NUMBER does not existing skipping mfa');
+      return;
+    }
+
     
     var token = speakeasy.totp({
       secret: process.env.AWS_MFA_KEY,
@@ -39,7 +49,6 @@ class ServerlessPlugin {
 
     // Clear cached credentials
     this.serverless.providers.aws.cachedCredentials = null;
-
 
   }
 
