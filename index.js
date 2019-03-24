@@ -13,17 +13,17 @@ class ServerlessPlugin {
   }
 
   async mfa() {
-    this.serverless.cli.log('get token');
     
     if (!process.env.AWS_MFA_KEY){
-      this.serverless.cli.log('AWS_MFA_KEY does not existing skipping mfa');
+      this.serverless.cli.log('AWS_MFA_KEY  environment variable does not existing skipping mfa');
       return;
     }
     if (!process.env.AWS_MFA_SERIAL_NUMBER){
-      this.serverless.cli.log('AWS_MFA_SERIAL_NUMBER does not existing skipping mfa');
+      this.serverless.cli.log('AWS_MFA_SERIAL_NUMBER environment variable does not existing skipping mfa');
       return;
     }
 
+    this.serverless.cli.log('get token');
     
     var token = speakeasy.totp({
       secret: process.env.AWS_MFA_KEY,
