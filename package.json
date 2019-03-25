@@ -10,7 +10,7 @@
     "token"
   ],
   "author": "Ali Kian",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "speakeasy": "^2.0.0"
   },
