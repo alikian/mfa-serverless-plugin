@@ -9,6 +9,7 @@ class ServerlessPlugin {
 
     this.hooks = {
       'before:deploy:deploy': this.mfa.bind(this),
+      'before:client:deploy:deploy': this.mfa.bind(this)
     };
   }
 
